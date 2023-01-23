@@ -7,6 +7,7 @@ with open("/var/lib/hypixel-tracker/settings.txt", "r") as file:
   webhook_url = lines[0].rstrip()
   hypixel_key = lines[1].rstrip()
   target_uuid = lines[2].rstrip()
+  username = lines[3].rstrip()
 
 try:
   open("/tmp/stalker", "r").close()
@@ -28,13 +29,13 @@ with open("/tmp/stalker", "r") as file:
 
   if online != previous.get("online", False) or game_mode != previous.get("game_mode"):
     if online and previous.get("game_mode") != game_mode:
-      status_string = f"ThatEmbryo just went online in {game_mode}"
+      status_string = f"{username} just went online in {game_mode}"
     else:
-      status_string = "ThatEmbryo just went offline"
+      status_string = f"{username} just went offline"
 
     webhook_data = {
       "content": status_string,
-      "username": "auckland mental institution tracker"
+      "username": "mental institution tracker"
     }
 
     requests.post(webhook_url, json=webhook_data)

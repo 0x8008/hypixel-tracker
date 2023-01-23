@@ -34,6 +34,8 @@ Create the file /var/lib/hypixel-tracker/settings.txt. The correct formatting fo
     Discord webhook URL
     Hypixel API key (/api on Hypixel)
     The target's UUID (namemc.com)
+    The target's username
+
 If you cannot set up the file properly, it will not work. Not that it should be too hard to fill in three things.
 
 ## What are the .nix files?
